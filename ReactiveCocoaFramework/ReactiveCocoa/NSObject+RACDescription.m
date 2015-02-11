@@ -24,7 +24,11 @@
 @implementation NSValue (RACDescription)
 
 - (NSString *)rac_description {
+#ifdef DEBUG
 	return self.description;
+#else
+	return @"(description skipped)";
+#endif
 }
 
 @end
@@ -32,7 +36,11 @@
 @implementation NSString (RACDescription)
 
 - (NSString *)rac_description {
+#ifdef DEBUG
 	return self.description;
+#else
+	return @"(description skipped)";
+#endif
 }
 
 @end
@@ -40,7 +48,11 @@
 @implementation RACTuple (RACDescription)
 
 - (NSString *)rac_description {
+#ifdef DEBUG
 	return self.allObjects.description;
+#else
+	return @"(description skipped)";
+#endif
 }
 
 @end
